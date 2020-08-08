@@ -4,7 +4,7 @@
     "lib": ["DOM", "ES6", "DOM.Iterable", "ScriptHost", "ES2017"],
     "baseUrl": "./src",
     "noEmit": false,
-    "sourceMap": true,
+    "sourceMap": false,
     "outDir": "./dist/",
     "esModuleInterop": true,
     "paths": {

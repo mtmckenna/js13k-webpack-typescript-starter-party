@@ -7,7 +7,7 @@ module.exports = {
 		minimizer: [new TerserJSPlugin({})]
 	},
 	plugins: [
-		new HtmlWebpackPlugin({ template: "src/index.html" }),
+		new HtmlWebpackPlugin({ template: "src/index.html", inject: "body" }),
     new CleanWebpackPlugin(),
 	],
 	resolve: { extensions: [".ts", ".js"] },

@@ -5,7 +5,6 @@
     "baseUrl": "./src",
     "noEmit": false,
     "sourceMap": false,
-    "outDir": "./dist/",
     "esModuleInterop": true,
     "paths": {
       "~*": ["./*"]

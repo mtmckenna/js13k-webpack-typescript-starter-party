@@ -6,9 +6,6 @@
     "noEmit": false,
     "sourceMap": false,
     "esModuleInterop": true,
-    "paths": {
-      "~*": ["./*"]
-    }
   },
   "include": ["src/**/*", "typedefs/*"]
 }

@@ -6,6 +6,7 @@ const BundleAnalyzerPlugin =
   require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
 const TerserJSPlugin = require("terser-webpack-plugin");
+const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 
 module.exports = merge(common, {
   mode: "production",
@@ -14,6 +15,7 @@ module.exports = merge(common, {
       new TerserJSPlugin({
         terserOptions: { compress: true, mangle: { properties: true } },
       }),
+      new HtmlMinimizerPlugin({minimizerOptions: { minifyJS: false}})
     ],
     minimize: true,
   },

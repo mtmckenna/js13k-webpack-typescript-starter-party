@@ -1,4 +1,5 @@
 import croissantImage from "../assets/croissant.png";
+import { clamp } from "./math";
 
 const canvas: HTMLCanvasElement = document.createElement("canvas");
 const ctx: CanvasRenderingContext2D = canvas.getContext("2d");
@@ -76,10 +77,6 @@ window.addEventListener("keyup", (e: KeyboardEvent) => {
       break;
   }
 });
-
-function clamp(num: number, min: number, max: number): number {
-  return Math.min(Math.max(num, min), max);
-}
 
 interface InputState {
   left: boolean;

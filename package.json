@@ -2,12 +2,15 @@
   "name": "js13k-webpack-typescript-party",
   "version": "2.0.0",
   "license": "MIT",
+  "type": "module",
+  "sideEffects": false,
   "scripts": {
-    "start": "webpack serve --config webpack.dev.js",
-    "build": "webpack --config webpack.prod.js",
-    "check-file-size": "yarn node ./scripts/check-file-size.js",
-    "build-zipped": "yarn run build && yarn node ./scripts/zip-file.js",
-    "party": "yarn run build-zipped && yarn run check-file-size"
+    "start": "webpack serve --config webpack.dev.cjs",
+    "build": "webpack --config webpack.prod.cjs",
+    "check-file-size": "node ./scripts/check-file-size.js",
+    "build-zipped": "npm run build && npm run compress && node ./scripts/zip-file.js",
+    "compress": "node ./scripts/compress-with-roadroller.js",
+    "party": "npm run build-zipped && npm run check-file-size"
   },
   "devDependencies": {
     "archiver": "^3.0.0",
@@ -15,6 +18,7 @@
     "html-minimizer-webpack-plugin": "^4.3.0",
     "html-webpack-plugin": "^5.0.0",
     "raw-loader": "^4.0.0",
+    "roadroller": "^2.1.0",
     "ts-loader": "^9.0.0",
     "typescript": "^4.0.0",
     "url-loader": "^4.1.0",

@@ -1,5 +1,5 @@
-const fs = require("fs");
-const archiver = require("archiver");
+import fs from "fs";
+import archiver from "archiver";
 
 const distDir = process.cwd() + "/dist";
 const zippedDir = process.cwd() + "/zipped";

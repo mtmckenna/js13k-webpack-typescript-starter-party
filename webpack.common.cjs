@@ -3,8 +3,8 @@ const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 
 module.exports = {
 	plugins: [
-	new HtmlWebpackPlugin({ template: "src/index.html", inject: "body" }),
-    new CleanWebpackPlugin(),
+		new HtmlWebpackPlugin({ template: "src/index.html", inject: "body", filename: "index.html"}),
+		new CleanWebpackPlugin(),
 	],
 	resolve: { extensions: [".ts", ".js"] },
 	module: {

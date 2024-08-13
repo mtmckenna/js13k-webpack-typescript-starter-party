@@ -1,9 +1,8 @@
 const { merge } = require("webpack-merge");
-const common = require("./webpack.common.js");
-const HtmlWebpackPlugin = require("html-webpack-plugin");
-const InlineChunkHtmlPlugin = require("./inline-chunk-html-plugin");
+
+const common = require("./webpack.common.cjs");
 const BundleAnalyzerPlugin =
-  require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
+    require("webpack-bundle-analyzer").BundleAnalyzerPlugin;
 const path = require("path");
 const TerserJSPlugin = require("terser-webpack-plugin");
 const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
@@ -11,6 +10,7 @@ const HtmlMinimizerPlugin = require("html-minimizer-webpack-plugin");
 module.exports = merge(common, {
   mode: "production",
   optimization: {
+    usedExports: true,
     minimizer: [
       new TerserJSPlugin({
         terserOptions: { compress: true, mangle: { properties: true } },
@@ -23,7 +23,6 @@ module.exports = merge(common, {
     path: path.join(process.cwd(), "dist"),
   },
   plugins: [
-    new InlineChunkHtmlPlugin(HtmlWebpackPlugin, [".js"]),
     new BundleAnalyzerPlugin({ openAnalyzer: false, analyzerMode: "static" }),
   ],
 });

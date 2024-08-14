@@ -6,8 +6,17 @@ import { minify } from "html-minifier-terser"
 
 const data = fs.readFileSync(`${distDir}/main.js`, "utf8");
 const index = fs.readFileSync(`${srcDir}/index.html`, "utf8");
-const minifiedIndex = await minify(index, { minifyCSS: true, collapseWhitespace: true, removeComments: true, removeAttributeQuotes: true, removeRedundantAttributes: true, removeScriptTypeAttributes: true, removeStyleLinkTypeAttributes: true, useShortDoctype: true });
-
+const minifiedIndex = (await minify(index,
+    {
+        minifyCSS: true,
+        collapseWhitespace: true,
+        removeComments: true,
+        removeAttributeQuotes: true,
+        removeRedundantAttributes: true,
+        removeScriptTypeAttributes: true,
+        removeStyleLinkTypeAttributes: true,
+        useShortDoctype: true }
+)).replace(/\<script type=module src=src\/index.js>\<\/script\>/,'');
 const inputs = [{
     action: "eval",
     type: "js",

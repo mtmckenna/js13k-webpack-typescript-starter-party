@@ -8,5 +8,9 @@ module.exports = merge(common, {
         hot: false,
         host: "0.0.0.0",
         allowedHosts: "all",
+        headers: {
+            'Cache-Control': 'max-age=0',
+            'Cache-Control': 'no-store',
+        },
     },
 });

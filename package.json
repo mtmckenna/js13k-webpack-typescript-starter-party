@@ -13,19 +13,19 @@
     "party": "npm run build-zipped && npm run check-file-size"
   },
   "devDependencies": {
-    "archiver": "^3.0.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "html-minimizer-webpack-plugin": "^4.3.0",
-    "html-webpack-plugin": "^5.0.0",
-    "raw-loader": "^4.0.0",
+    "archiver": "^7.0.1",
+    "clean-webpack-plugin": "^4.0.0",
+    "html-minimizer-webpack-plugin": "^5.0.0",
+    "html-webpack-plugin": "^5.6.0",
+    "raw-loader": "^4.0.2",
     "roadroller": "^2.1.0",
-    "ts-loader": "^9.0.0",
-    "typescript": "^4.0.0",
-    "url-loader": "^4.1.0",
-    "webpack": "^5.0.0",
-    "webpack-bundle-analyzer": "^4.4.2",
-    "webpack-cli": "^4.0.0",
-    "webpack-dev-server": "^4.13.1",
-    "webpack-merge": "^5.1.1"
+    "ts-loader": "^9.5.1",
+    "typescript": "^5.6.3",
+    "url-loader": "^4.1.1",
+    "webpack": "^5.96.1",
+    "webpack-bundle-analyzer": "^4.10.2",
+    "webpack-cli": "^5.1.4",
+    "webpack-dev-server": "^5.1.0",
+    "webpack-merge": "^6.0.1"
   }
 }
